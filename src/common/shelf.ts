@@ -1,6 +1,6 @@
 export interface IShelf {
-    shelfId: number;
+    shelfId: string;
     name: string;
-    zoneId: number;
-    warehouseId: number;
+    zoneId: string;
+    warehouseId: string;
 }

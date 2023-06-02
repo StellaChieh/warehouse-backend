@@ -3,10 +3,10 @@ import { IShelf } from '../common/shelf';
 
 
 const ShelfSchema = new Schema<IShelf>({
-    shelfId: { type: Number, required: true},
+    shelfId: { type: String, required: true},
     name: { type: String, required: true},
-    zoneId: { type: Number, required: true},
-    warehouseId: { type: Number, required: true}
+    zoneId: { type: String, required: true},
+    warehouseId: { type: String, required: true}
 }, { timestamps: true })
 
 const Shelf = model("Shelf", ShelfSchema)

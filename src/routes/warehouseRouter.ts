@@ -1,7 +1,6 @@
 import express from 'express';
-import { WarehouseController } from '../controllers/warehouseController';
-
-const warehouseController = new WarehouseController()
+// import { WarehouseController } from '../controllers/warehouseController';
+import { createWarehouse } from '../controllers/warehouseController';
 
 export const warehouseRouter = express.Router();
-warehouseRouter.post('/warehouse', warehouseController.createWarehouse)
+warehouseRouter.post('/warehouse', createWarehouse)
