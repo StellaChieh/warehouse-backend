@@ -50,8 +50,10 @@ docker-compose down -v
 
 ## Check DB condition
 (after running mongo db in docker)
-'''bash
-docker exec -it [container name] mongosh -r root -p divergent-warehouse
+```bash
+docker exec -it [container name] mongosh -r root -p 
+divergent-warehouse
 use development
 show collections
 db.shelves.find({})
+'''
