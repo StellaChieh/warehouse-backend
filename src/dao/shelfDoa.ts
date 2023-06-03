@@ -9,7 +9,7 @@ const ShelfSchema = new Schema<IShelf>({
     warehouseId: { type: String, required: true}
 }, { timestamps: true })
 
-const Shelf = model("Shelf", ShelfSchema)
+export const Shelf = model("Shelf", ShelfSchema)
 
 
 export async function findExistingShelf(targetShelf: IShelf) : Promise<IShelf | null> {

@@ -16,6 +16,15 @@ afterAll(async () => {
     await mongoose.connection.close();
 });
 
+
+beforeEach (async () => {
+  const collections = await mongoose.connection.db.collections();
+  for (const collection of collections) {
+      await collection.deleteMany({});
+  }
+})
+
+
 jest.setTimeout(20000);
 describe('test ShelfDao', () => {
 
