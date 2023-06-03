@@ -1,4 +1,4 @@
-# F22-SB5-FoodHunter-Backend
+# Warehouse-Backend
 
 ## Technologies
 

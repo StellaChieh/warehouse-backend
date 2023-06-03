@@ -14,13 +14,12 @@ export async function createWarehouseZone(req: Request, res: Response): Promise<
         for (let i=0; i<shelves.length; i++) {
             const dbRecord = await findExistingShelf(shelves[i]);
             if (dbRecord) {
-                errorMsg.push(shelves[i].name + " exists in Zone " + dbRecord.zoneId);
+                errorMsg.push("Shelf name '" + shelves[i].name + "' already exists in Zone " + dbRecord.zoneId + ".");
             }
         }
         if (errorMsg.length > 0) {
             return res.status(400).send({msg: errorMsg})    
         }
-
         await saveShelves(shelves);
         return res.status(200).send({msg: "OK!"})
 
