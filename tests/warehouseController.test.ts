@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 import { dbConfig } from '../src/configs/db';
-import {findExistingShelf, saveShelves} from '../src/dao/shelfDoa'
-import { IShelf } from '../src/common/shelf';
+import { IShelf } from '../src/model/shelf';
 
 beforeAll(async () => {
     await mongoose.connect(`mongodb://${dbConfig.dbHost}:${dbConfig.dbPort}/${dbConfig.dbDatabase}`, {

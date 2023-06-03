@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-import { IShelf } from '../common/shelf'; 
+import { IShelf } from '../model/shelf'; 
 
 
 const ShelfSchema = new Schema<IShelf>({
