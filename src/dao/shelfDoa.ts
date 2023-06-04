@@ -1,21 +1,27 @@
-import { Schema, model } from 'mongoose';
-import { IShelf } from '../model/shelf'; 
+import { Schema, model } from "mongoose";
+import { IShelf } from "../model/shelf";
 
+const ShelfSchema = new Schema<IShelf>(
+  {
+    shelfId: { type: String, required: true },
+    name: { type: String, required: true },
+    zoneId: { type: String, required: true },
+    warehouseId: { type: String, required: true },
+  },
+  { timestamps: true }
+);
 
-const ShelfSchema = new Schema<IShelf>({
-    shelfId: { type: String, required: true},
-    name: { type: String, required: true},
-    zoneId: { type: String, required: true},
-    warehouseId: { type: String, required: true}
-}, { timestamps: true })
+export const Shelf = model("Shelf", ShelfSchema);
 
-export const Shelf = model("Shelf", ShelfSchema)
-
-
-export async function findExistingShelf(targetShelf: IShelf) : Promise<IShelf | null> {
-    return await Shelf.findOne({name: targetShelf.name, warehouseId: targetShelf.warehouseId}).exec();
+export async function findExistingShelf(
+  targetShelf: IShelf
+): Promise<IShelf | null> {
+  return await Shelf.findOne({
+    name: targetShelf.name,
+    warehouseId: targetShelf.warehouseId,
+  }).exec();
 }
 
-export async function saveShelves(shelves: IShelf[]) : Promise<IShelf[] | null> {
-    return await Shelf.create(shelves)
+export async function saveShelves(shelves: IShelf[]): Promise<IShelf[] | null> {
+  return await Shelf.create(shelves);
 }

@@ -1,5 +1,5 @@
-import { env } from '../utils/env';
+import { env } from "../utils/env";
 
 export const serverConfig = {
-  serverPort: env('PORT', '8080'),
+  serverPort: env("PORT", "8080"),
 };
