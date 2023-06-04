@@ -6,7 +6,7 @@ import { IShelf } from '../src/model/shelf';
 
 
 beforeAll(async () => {
-    await mongoose.connect(`mongodb://${dbConfig.dbHost}:${dbConfig.dbPort}/${dbConfig.dbDatabase}`, {
+    await mongoose.connect(`mongodb://${dbConfig.dbHost}:${dbConfig.dbPort}/${dbConfig.testDbDatabase}`, {
       authSource: dbConfig.dbAuthSource,
       user: dbConfig.dbUsername,
       pass: dbConfig.dbPassword,
@@ -52,10 +52,8 @@ describe('test warehouse service', () => {
             zoneId: "12",
             warehouseId: "13"
         }
-        const shelfDocument = new Shelf(shelfBObj)
         const {status, message} = await saveShelvesService(shelfBObj.warehouseId, 
             shelfBObj.zoneId, {"2": "shelf2"})
-        console.log(message)
         expect(status).toBeTruthy();
     });
 

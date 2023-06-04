@@ -4,7 +4,7 @@ import {findExistingShelf, saveShelves} from '../src/dao/shelfDoa'
 import { IShelf } from '../src/model/shelf';
 
 beforeAll(async () => {
-    await mongoose.connect(`mongodb://${dbConfig.dbHost}:${dbConfig.dbPort}/${dbConfig.dbDatabase}`, {
+    await mongoose.connect(`mongodb://${dbConfig.dbHost}:${dbConfig.dbPort}/${dbConfig.testDbDatabase}`, {
       authSource: dbConfig.dbAuthSource,
       user: dbConfig.dbUsername,
       pass: dbConfig.dbPassword,

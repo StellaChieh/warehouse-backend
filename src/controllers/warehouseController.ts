@@ -7,7 +7,6 @@ export async function createWarehouseZone(req: Request, res: Response): Promise<
         const zoneId: string = req.body.zoneId;
         const shelfIdAndNames: {} = req.body.shelfNames;
         const {status, message} = await saveShelvesService(warehouseId, zoneId, shelfIdAndNames)
-        
         if (status) {
             return res.status(200).send({msg: "OK!"})
         } else {
